@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ho, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .heading{
+        font-size: xx-large;
+        color: gold;
+    }
+    body{
+        margin: 200px;
+        text-align: center;
+        background-color: #000000;
+        color: greenyellow;
+        font-size: x-large;
+    }
+    h1{
+        color: rgb(248, 248, 248);
+    }
+    h2{
+        color: red;
+    }
+</style>
+<div class="heading">
+    Password Generator
+</div>
+<body>
+     <form action="{% url 'password' %}">
+        <select name="length">
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12" selected="selected" >12</option>
+            <option value="20">20</option>
+        </select>
+
+<br><input type="checkbox" name="uppercase"> Uppercase
+</br>
+<input type="checkbox" name="number"> Number
+</br>
+<input type="checkbox" name="lowercase"> Lowercase
+</br>
+<input type="checkbox" name="special"> special
+    </br>
+
+        <input type="submit" value="Generate Password">
+     </form>
+     <h1>PASSWORD</h1>
+     <h2>{{password}}</h2>
+</body>
+</html>
